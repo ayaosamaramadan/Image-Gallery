@@ -1,0 +1,148 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-image: url(./imgs/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center; 
+  /* overflow: hidden; */
+  height: 100vh; 
+}
+
+#d{
+  display: flex;
+
+}
+#div1{
+    color: white;
+    font-size: 380%;
+    letter-spacing: 2px;
+    margin: 15% 0 2% 5%;
+
+
+}
+
+#div2{
+    color: white;
+    font-size: 100%;
+    letter-spacing: 1px;
+    margin: 0 0 0 5%;
+    width: 49%;
+
+}
+
+#div22 {
+  margin-bottom: 4%;
+}
+
+#div3{
+  background-color: #c1c29f;
+    color: rgb(0, 0, 0);
+    font-size: 100%;
+    letter-spacing: 1px;
+  
+    width: 35%;
+padding: 4% 0% 4% 4%;
+    display: flex;
+    border-radius: 10px;
+    opacity: 0.7;
+
+}
+
+#div3 p{
+  
+  font-weight: 600;
+  
+}
+
+#div3 img{
+  width: 10%;
+  height:10%;
+  margin-top: 2%;
+}
+
+#div4{
+  display: absolute;
+  
+margin-top: 13%;
+margin-left: 0%;
+width: 490px;
+
+
+}
+
+span{
+  display: relative;
+  color: #f7f7f7;
+  font-weight: 600;
+}
+
+#div5{
+  margin-top: 25%;
+  display: flex;
+
+  margin-right: 0%;
+
+}
+
+#div5 span{
+  width:45px;
+  height:50px;  
+  margin-left: -90%;
+  margin-right:-470%;
+  margin-top: -15%;
+  cursor: pointer;
+  font-size:40px;
+  text-align: center;
+
+  border-radius: 100px;
+  padding: 0% 3% 3% 5%;
+}
+
+#div5 span:hover{
+  animation-duration: 1s;
+  animation-name: pulse;
+  animation-iteration-count:1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulse{
+  0%{
+    opacity: 0.7;
+    transform: scale(0.6);
+    background-color: #685e5e; 
+  }
+  50%{
+    opacity: 1;
+    transform: scale(0.7);
+    background-color: #685e5e; /* Midway background color */
+  }
+  100%{
+    opacity: 0.7;
+    transform: scale(0.6);
+    background-color: #685e5e;
+  }
+}
+
+
+ul{
+  display: flex;
+  margin-top: 3%;
+  margin-left: 45%;
+
+}
+li{
+  background-color: #D9D9D9;
+  color: #D9D9D9;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  list-style-type: circle;
+  border-radius: 100px;
+  list-style: none;
+  cursor: pointer;
+}
