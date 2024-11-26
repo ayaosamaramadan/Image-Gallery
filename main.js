@@ -12,6 +12,10 @@ let title = {
   title4: "Malaysia",
 };
 
+body = document.querySelector("body");
+body.style.cssText =
+  "background-image:url(./imgs/bg.png);background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-position:center;overflow:hidden;height:100vh;";
+
 let contener = document.getElementById("d");
 let div11 = document.createElement("div");
 let div1 = document.createElement("div");
@@ -46,6 +50,8 @@ divp.textContent = "Read more";
 div3.appendChild(divp);
 let imgReadmore = document.createElement("img");
 imgReadmore.setAttribute("src", "./imgs/Vector 1.png");
+imgReadmore.style.cssText =
+  "width:10%;height:10%;margin-top:5%;margin-left:5%;";
 div3.appendChild(imgReadmore);
 div12.appendChild(div3);
 div11.appendChild(div12);
@@ -66,12 +72,15 @@ for (let i = 1; i <= 4; i++) {
   theLiCreated.value = i;
   theLiCreated.setAttribute("class", `li${i}`);
   theLiCreated.textContent = i;
+  theLiCreated.style.cssText =
+    " background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
   theUlCreated.appendChild(theLiCreated);
 }
 
 // prev btn
 let prev = document.createElement("span");
 prev.innerHTML = "&#8249;";
+prev.style.cssText = "color:#f7f7f7;font-weight:600;";
 theDiv4.appendChild(prev);
 
 // img
@@ -84,12 +93,13 @@ console.log(imgSrc);
 // next btn
 let next = document.createElement("span");
 next.innerHTML = "&#8250;";
+next.style.cssText = "color:#f7f7f7;font-weight:600;";
 theDiv4.appendChild(next);
-console.log(theDiv4);
 
 //prev&next click events
 let theImg = document.querySelector("#div4 img");
-
+theImg.style.cssText =
+  "margin-right:5%;margin-left:5%;margin-top:0.5%;transition:opacity 0.5s ease-in-out;opacity: 1;";
 function prevClick() {
   if (imgSrc === data["img1"]) {
     theImg.setAttribute("src", data["img4"]);
