@@ -126,10 +126,7 @@ function setActiveLibyimg() {
         "background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
     }
   });
-  console.log(imgSrc);
 }
-
-
 
 // prev btn
 let prev = document.createElement("span");
@@ -143,7 +140,6 @@ let firstImg = document.createElement("img");
 firstImg.setAttribute("src", data["img1"]);
 let imgSrc = firstImg.getAttribute("src");
 theDiv4.appendChild(firstImg);
-console.log(imgSrc);
 
 // next btn
 let next = document.createElement("span");
@@ -154,8 +150,8 @@ theDiv4.appendChild(next);
 
 //prev&next click events
 let theImg = document.querySelector("#div4 img");
-theImg.style.cssText =
-  "margin-right:5%;margin-left:5%;margin-top:0.5%;transition:opacity 0.5s ease-in-out;opacity: 1;";
+theImg.style.cssText = "margin-right:5%;margin-left:5%;margin-top:0.5%;";
+
 
 let ulll = document.getElementById("ull");
 function prevClick() {
@@ -173,7 +169,8 @@ function prevClick() {
 }
 
 function nextClick() {
-  if (imgSrc === data["img1"]) {
+    theImg.style.cssText ="margin-right:5%;margin-left:5%;margin-top:0.5%;animation:imgRight 7s ease-in-out infinite;";
+     if (imgSrc === data["img1"]) {
     theImg.setAttribute("src", data["img2"]);
   } else if (imgSrc === data["img2"]) {
     theImg.setAttribute("src", data["img3"]);
@@ -192,17 +189,22 @@ next.addEventListener("click", nextClick);
 // auto slide
 let intervalId = setInterval(() => {
   nextClick();
-}, 3000);
+         theImg.style.animation = "imgRight 7s ease-in-out infinite";
+}, 7000);
 
 // remove auto slide on hover
 theImg.addEventListener("mouseover", () => {
   clearInterval(intervalId);
+  theImg.style.animation = "none";
 });
 
 // add auto slide on mouseout
 theImg.addEventListener("mouseout", () => {
-  intervalId = setInterval(nextClick, 5000);
+  theImg.style.animation = "identifier 7s ease-in-out infinite";
+  intervalId = setInterval(nextClick, 7000);
 });
+
+
 
 function liClick(e) {
   theImg.setAttribute("src", data[`img${e.target.value}`]);

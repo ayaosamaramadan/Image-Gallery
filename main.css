@@ -15,14 +15,31 @@
   animation-fill-mode: forwards;
 }
 
-.active {
-  background-color: #746d6d;
-  color: #746d6d;
-  margin-right: 10px;
-  list-style-type: circle;
-  border-radius: 100px;
-  list-style: none;
-  cursor: pointer;
+@keyframes imgRight {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateX(-100%);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translateX(100%);
+  }
+}
+
+@keyframes identifier {
+  50% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translateX(100%);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -35,7 +52,7 @@
     width: 54%;
   }
   #div3 {
-    width: 40%;
+    width: 35%;
     padding: 4% 0% 4% 5%;
   }
   #div3 p {
@@ -43,7 +60,7 @@
   }
   #div3 img {
     margin-left: 8%;
-    margin-top: 2%;
+    margin-top: 0%;
     margin-right: 5%;
   }
   #div4 {
