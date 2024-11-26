@@ -42,7 +42,7 @@ theDiv4.appendChild(next);
 console.log(theDiv4);
 
 let theImg = document.querySelector("#div4 img");
-
+theImg.style="hover:`clearInterval()`";
 function prevClick() {
   if (imgSrc === data["img1"]) {
     theImg.setAttribute("src", data["img4"]);
@@ -72,6 +72,14 @@ function nextClick() {
 prev.addEventListener("click", prevClick);
 next.addEventListener("click", nextClick);
 
-setInterval(() => {
+let intervalId = setInterval(() => {
   nextClick();
-}, 5000);
+}, 3000);
+
+theImg.addEventListener("mouseover", () => {
+  clearInterval(intervalId);
+});
+
+theImg.addEventListener("mouseout", () => {
+  intervalId = setInterval(nextClick, 5000);
+});
