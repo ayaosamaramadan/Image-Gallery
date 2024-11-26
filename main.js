@@ -42,6 +42,7 @@ theDiv4.appendChild(next);
 console.log(theDiv4);
 
 let theImg = document.querySelector("#div4 img");
+
 function prevClick() {
   if (imgSrc === data["img1"]) {
     theImg.setAttribute("src", data["img4"]);
@@ -70,3 +71,7 @@ function nextClick() {
 
 prev.addEventListener("click", prevClick);
 next.addEventListener("click", nextClick);
+
+setInterval(() => {
+  nextClick();
+}, 5000);
