@@ -117,52 +117,15 @@ for (let i = 1; i <= 4; i++) {
 let theLiElements = document.querySelectorAll("#ull li");
 
 function setActiveLibyimg() {
-
-  if (imgSrc === data["img1"]) {
-    theLiElements[0].style.cssText =
-    " background-color:#746d6d;color:#746d6d;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    theLiElements[1].style.cssText =
-    " background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    theLiElements[2].style.cssText =
-    " background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    theLiElements[3].style.cssText =
-    " background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    
-
-  } else if (imgSrc === data["img2"]) {
-    theLiElements[1].style.cssText =
-    " background-color:#746d6d;color:#746d6d;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    theLiElements[0].style.cssText =
-    "background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    theLiElements[2].style.cssText =
-    "background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    theLiElements[3].style.cssText =
-    "background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    
-
-  } else if (imgSrc === data["img3"]) {
-    theLiElements[2].style.cssText =
-    " background-color:#746d6d;color:#746d6d;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    theLiElements[0].style.cssText =
-    "background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    theLiElements[1].style.cssText =
-    "background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    theLiElements[3].style.cssText =
-    "background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    
-
-  } else if (imgSrc === data["img4"]) {
-    theLiElements[3].style.cssText =
-    " background-color:#746d6d;color:#746d6d;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    theLiElements[0].style.cssText =
-    "background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    theLiElements[1].style.cssText =
-    "background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    theLiElements[2].style.cssText =
-    "background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    
-
-  }
+  theLiElements.forEach((li, index) => {
+    if (imgSrc === data[`img${index + 1}`]) {
+      li.style.cssText =
+        "background-color:#746d6d;color:#746d6d;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
+    } else {
+      li.style.cssText =
+        "background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
+    }
+  });
   console.log(imgSrc);
 }
 
@@ -250,3 +213,5 @@ function liClick(e) {
 theLiElements.forEach((li) => {
   li.addEventListener("click", liClick);
 });
+
+setActiveLibyimg();
