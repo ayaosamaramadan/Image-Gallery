@@ -14,11 +14,12 @@
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-@keyframes pulse {
-  0%{opacity: 0.7;transform: scale(0.6);background-color: #685e5e;}
-  50%{opacity: 1;transform: scale(0.7);background-color: #685e5e;}
-  100%{opacity: 0.7;transform: scale(0.6);background-color: #685e5e;}
+
+.active {
+  background-color: #332c2c;
+  color: white;
 }
+
 @media (min-width: 1024px) {
   #div1 {
     font-size: 380%;

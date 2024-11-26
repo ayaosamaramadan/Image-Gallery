@@ -1,3 +1,28 @@
+const styleSheet = document.createElement("style");
+styleSheet.innerText = `
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.6);
+    background-color: #685e5e;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(0.7);
+    background-color: #685e5e;
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(0.6);
+    background-color: #685e5e;
+  }
+}
+
+`;
+document.head.appendChild(styleSheet);
+
+// Data for the images and titles
+
 let data = {
   img1: "./imgs/img1.png",
   img2: "./imgs/img2.png",
@@ -12,11 +37,11 @@ let title = {
   title4: "Malaysia",
 };
 
+//  body
 body = document.querySelector("body");
 body.style.cssText =
   "background-image:url(./imgs/bg.png);background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-position:center;overflow:hidden;height:100vh;";
 
-// let contener = document.getElementById("d");
 let contener = document.createElement("div");
 contener.setAttribute("id", "d");
 contener.style.cssText = "display: flex;";
@@ -81,7 +106,6 @@ theUlid.appendChild(theUlCreated);
 for (let i = 1; i <= 4; i++) {
   let theLiCreated = document.createElement("li");
   theLiCreated.value = i;
-  theLiCreated.setAttribute("class", `li${i}`);
   theLiCreated.textContent = i;
   theLiCreated.style.cssText =
     " background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
@@ -113,6 +137,8 @@ theDiv4.appendChild(next);
 let theImg = document.querySelector("#div4 img");
 theImg.style.cssText =
   "margin-right:5%;margin-left:5%;margin-top:0.5%;transition:opacity 0.5s ease-in-out;opacity: 1;";
+
+let ulll = document.getElementById("ull");
 function prevClick() {
   if (imgSrc === data["img1"]) {
     theImg.setAttribute("src", data["img4"]);
@@ -155,4 +181,14 @@ theImg.addEventListener("mouseover", () => {
 // add auto slide on mouseout
 theImg.addEventListener("mouseout", () => {
   intervalId = setInterval(nextClick, 5000);
+});
+
+function liClick(e) {
+  theImg.setAttribute("src", data[`img${e.target.value}`]);
+  imgSrc = theImg.getAttribute("src");
+}
+
+let theLiElements = document.querySelectorAll("#ull li");
+theLiElements.forEach((li) => {
+  li.addEventListener("click", liClick);
 });
