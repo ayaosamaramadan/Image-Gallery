@@ -13,6 +13,16 @@ body {
   height: 100vh;
 }
 
+li {
+  background-color: #d9d9d9;
+  color: #d9d9d9;
+  margin-right: 10px;
+  list-style-type: circle;
+  border-radius: 100px;
+  list-style: none;
+  cursor: pointer;
+}
+
 @media (min-width: 1024px) {
   #d {
     display: flex;
@@ -119,17 +129,12 @@ body {
     margin-left: 45%;
   }
   li {
-    background-color: #994242;
-    color: #d9d9d9;
     width: 15px;
     height: 15px;
-    margin-right: 10px;
-    list-style-type: circle;
-    border-radius: 100px;
-    list-style: none;
-    cursor: pointer;
   }
 }
+
+
 
 @media (min-width: 525px) and (max-width: 1024px) {
   #d {
@@ -189,6 +194,7 @@ body {
   #div4 img {
     margin-right: 5%;
     margin-left: 5%;
+    margin-top: 0.5%;
   }
 
   span {
@@ -238,16 +244,10 @@ body {
     margin-left: 45%;
   }
   li {
-    background-color: #d9d9d9;
-    color: #d9d9d9;
     width: 13px;
     height: 13px;
-    margin-right: 10px;
-    list-style-type: circle;
-    border-radius: 100px;
-    list-style: none;
-    cursor: pointer;
   }
+
 }
 
 @media (max-width: 524px) {
@@ -356,14 +356,7 @@ body {
     margin-left: 45%;
   }
   li {
-    background-color: #d9d9d9;
-    color: #d9d9d9;
     width: 10px;
     height: 10px;
-    margin-right: 10px;
-    list-style-type: circle;
-    border-radius: 100px;
-    list-style: none;
-    cursor: pointer;
   }
 }
