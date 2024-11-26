@@ -16,10 +16,15 @@ body = document.querySelector("body");
 body.style.cssText =
   "background-image:url(./imgs/bg.png);background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-position:center;overflow:hidden;height:100vh;";
 
-let contener = document.getElementById("d");
+// let contener = document.getElementById("d");
+let contener = document.createElement("div");
+contener.setAttribute("id", "d");
+contener.style.cssText = "display: flex;";
+body.appendChild(contener);
 let div11 = document.createElement("div");
 let div1 = document.createElement("div");
 div1.setAttribute("id", "div1");
+div1.style.cssText = "color:white;letter-spacing:2px;";
 for (let i = 1; i <= 4; i++) {
   let p = document.createElement("p");
   p.setAttribute("id", `p${i}`);
@@ -31,9 +36,11 @@ div11.appendChild(div1);
 // contener.appendChild(div11);
 let div12 = document.createElement("div");
 div12.setAttribute("id", "div2");
+div12.style.cssText = "color: white;font-size:100%;letter-spacing:1px;";
 
 let div22 = document.createElement("div");
 div22.setAttribute("id", "div22");
+div22.style.cssText = "margin-bottom:8%;";
 
 let divpp = document.createElement("p");
 divpp.setAttribute("id", "pp");
@@ -44,6 +51,8 @@ div12.appendChild(div22);
 
 let div3 = document.createElement("div");
 div3.setAttribute("id", "div3");
+div3.style.cssText =
+  "background-color:#c1c29f;color:rgb(0,0,0);font-size:100%;letter-spacing:1px;display:flex;border-radius:10px;opacity:0.7;";
 let divp = document.createElement("p");
 divp.setAttribute("id", "p");
 divp.textContent = "Read more";
@@ -58,12 +67,14 @@ div11.appendChild(div12);
 contener.appendChild(div11);
 let theDiv4 = document.createElement("div");
 theDiv4.setAttribute("id", "div4");
+theDiv4.style.cssText = "display:flex;";
 
 contener.appendChild(theDiv4);
 
 //ul def
-let theUlid = document.getElementById("ull");
-
+let theUlid = document.createElement("div");
+theUlid.setAttribute("id", "ull");
+body.appendChild(theUlid);
 // full ul with li
 let theUlCreated = document.createElement("ul");
 theUlid.appendChild(theUlCreated);
@@ -80,7 +91,8 @@ for (let i = 1; i <= 4; i++) {
 // prev btn
 let prev = document.createElement("span");
 prev.innerHTML = "&#8249;";
-prev.style.cssText = "color:#f7f7f7;font-weight:600;";
+prev.style.cssText =
+  "color:#f7f7f7;font-weight:600;width:45px;cursor:pointer;font-size:40px;text-align:center;border-radius:100px;padding:0% 3% 3% 5%;";
 theDiv4.appendChild(prev);
 
 // img
@@ -93,7 +105,8 @@ console.log(imgSrc);
 // next btn
 let next = document.createElement("span");
 next.innerHTML = "&#8250;";
-next.style.cssText = "color:#f7f7f7;font-weight:600;";
+next.style.cssText =
+  "color:#f7f7f7;font-weight:600;width:45px;cursor:pointer;font-size:40px;text-align:center;border-radius:100px;padding:0% 3% 3% 5%;";
 theDiv4.appendChild(next);
 
 //prev&next click events

@@ -2,44 +2,35 @@
   margin: 0;
   padding: 0;
 }
-
 #div4 {
-  display: flex;
   margin-top: 20%;
   width: 150px;
   height: 300px;
   margin-right: 35%;
 }
+#div4 span:hover {
+  animation-duration: 1s;
+  animation-name: pulse;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes pulse {
+  0%{opacity: 0.7;transform: scale(0.6);background-color: #685e5e;}
+  50%{opacity: 1;transform: scale(0.7);background-color: #685e5e;}
+  100%{opacity: 0.7;transform: scale(0.6);background-color: #685e5e;}
+}
 @media (min-width: 1024px) {
-  #d {
-    display: flex;
-  }
   #div1 {
-    color: white;
     font-size: 380%;
-    letter-spacing: 2px;
     margin: 15% 0 2% 5%;
   }
   #div2 {
-    color: white;
-    font-size: 100%;
-    letter-spacing: 1px;
     margin: 0 0 0 5%;
     width: 54%;
   }
-  #div22 {
-    margin-bottom: 4%;
-  }
   #div3 {
-    background-color: #c1c29f;
-    color: rgb(0, 0, 0);
-    font-size: 100%;
-    letter-spacing: 1px;
     width: 40%;
     padding: 4% 0% 4% 5%;
-    display: flex;
-    border-radius: 10px;
-    opacity: 0.7;
   }
   #div3 p {
     font-weight: 600;
@@ -55,41 +46,12 @@
     margin-right: 10%;
   }
   #div4 span {
-    margin-top: 40%;
-    width: 45px;
+    margin-top: 30%;
     height: 50px;
-    cursor: pointer;
-    font-size: 40px;
-    text-align: center;
-    border-radius: 100px;
-    padding: 0% 3% 3% 5%;
-  }
-  #div4 span:hover {
-    animation-duration: 1s;
-    animation-name: pulse;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-  }
-  @keyframes pulse {
-    0% {
-      opacity: 0.7;
-      transform: scale(0.6);
-      background-color: #685e5e;
-    }
-    50% {
-      opacity: 1;
-      transform: scale(0.7);
-      background-color: #685e5e;
-    }
-    100% {
-      opacity: 0.7;
-      transform: scale(0.6);
-      background-color: #685e5e;
-    }
   }
   ul {
     display: flex;
-    margin-top: 5%;
+    margin-top: 3%;
     margin-left: 45%;
   }
   li {
@@ -98,35 +60,17 @@
   }
 }
 @media (min-width: 525px) and (max-width: 1024px) {
-  #d {
-    display: flex;
-  }
   #div1 {
-    color: white;
     font-size: 270%;
-    letter-spacing: 2px;
     margin: 35% 0 5% 10%;
   }
   #div2 {
-    color: white;
-    font-size: 100%;
-    letter-spacing: 1px;
     margin: 0 0 0 10%;
     width: 90%;
   }
-  #div22 {
-    margin-bottom: 8%;
-  }
   #div3 {
-    background-color: #c1c29f;
-    color: rgb(0, 0, 0);
     padding: 3% 10% 3% 5%;
-    font-size: 100%;
-    letter-spacing: 1px;
     width: 30%;
-    display: flex;
-    border-radius: 10px;
-    opacity: 0.7;
   }
   #div3 p {
     font-weight: 600;
@@ -134,36 +78,7 @@
   }
   #div4 span {
     margin-top: 70%;
-    width: 45px;
     height: 50px;
-    cursor: pointer;
-    font-size: 40px;
-    text-align: center;
-    border-radius: 100px;
-    padding: 0% 3% 3% 5%;
-  }
-  #div4 span:hover {
-    animation-duration: 1s;
-    animation-name: pulse;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-  }
-  @keyframes pulse {
-    0% {
-      opacity: 0.7;
-      transform: scale(0.6);
-      background-color: #685e5e;
-    }
-    50% {
-      opacity: 1;
-      transform: scale(0.7);
-      background-color: #685e5e;
-    }
-    100% {
-      opacity: 0.7;
-      transform: scale(0.6);
-      background-color: #685e5e;
-    }
   }
   ul {
     display: flex;
@@ -176,35 +91,17 @@
   }
 }
 @media (max-width: 524px) {
-  #d {
-    display: flex;
-  }
   #div1 {
-    color: white;
     font-size: 220%;
-    letter-spacing: 2px;
     margin: 50% 0 15% 9%;
   }
   #div2 {
-    color: white;
-    font-size: 100%;
-    letter-spacing: 1px;
     margin: 0 0 0% 10%;
-    width: 90%;
-  }
-  #div22 {
-    margin-bottom: 8%;
+    width: 70%;
   }
   #div3 {
-    background-color: #c1c29f;
-    color: rgb(0, 0, 0);
-    font-size: 100%;
-    letter-spacing: 1px;
     width: 90%;
     padding: 6% 4% 6% 6%;
-    display: flex;
-    border-radius: 10px;
-    opacity: 0.7;
   }
   #div3 p {
     font-weight: 600;
@@ -215,44 +112,15 @@
     margin-right: 5%;
   }
   #div4 {
-    margin-top: 33%;
-    margin-right: 45%;
+    margin-top: 30%;
+    margin-right: 30%;
   }
   #div4 img {
     height: 270px;
   }
   #div4 span {
-    margin-top: 40%;
-    width: 45px;
+    margin-top: 60%;
     height: 50px;
-    cursor: pointer;
-    font-size: 40px;
-    text-align: center;
-    border-radius: 100px;
-    padding: 0% 3% 3% 5%;
-  }
-  #div4 span:hover {
-    animation-duration: 1s;
-    animation-name: pulse;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-  }
-  @keyframes pulse {
-    0% {
-      opacity: 0.7;
-      transform: scale(0.6);
-      background-color: #685e5e;
-    }
-    50% {
-      opacity: 1;
-      transform: scale(0.7);
-      background-color: #685e5e;
-    }
-    100% {
-      opacity: 0.7;
-      transform: scale(0.6);
-      background-color: #685e5e;
-    }
   }
   ul {
     display: flex;
