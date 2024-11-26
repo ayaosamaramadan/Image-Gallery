@@ -16,8 +16,13 @@
 }
 
 .active {
-  background-color: #332c2c;
-  color: white;
+  background-color: #746d6d;
+  color: #746d6d;
+  margin-right: 10px;
+  list-style-type: circle;
+  border-radius: 100px;
+  list-style: none;
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) {
