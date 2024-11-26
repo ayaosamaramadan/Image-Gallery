@@ -195,6 +195,8 @@ li {
     margin-right: 5%;
     margin-left: 5%;
     margin-top: 0.5%;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
   }
 
   span {
