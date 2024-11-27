@@ -82,6 +82,7 @@ let divp = document.createElement("p");
 divp.setAttribute("id", "p");
 divp.textContent = "Read more";
 div3.appendChild(divp);
+
 let imgReadmore = document.createElement("img");
 imgReadmore.setAttribute("src", "./imgs/Vector 1.png");
 imgReadmore.style.cssText =
@@ -203,7 +204,9 @@ theImg.addEventListener("mouseover", () => {
 
 // add auto slide on mouseout
 theImg.addEventListener("mouseout", () => {
-  theImg.style.animation = isMovingLeft ? "identifierL 5s infinite" : "identifierR 5s infinite";
+  theImg.style.animation = isMovingLeft
+    ? "identifierL 5s infinite"
+    : "identifierR 5s infinite";
   intervalId = setInterval(isMovingLeft ? prevClick : nextClick, 5000);
 });
 
