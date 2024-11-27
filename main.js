@@ -152,9 +152,11 @@ theDiv4.appendChild(next);
 let theImg = document.querySelector("#div4 img");
 theImg.style.cssText = "margin-right:5%;margin-left:5%;margin-top:0.5%;";
 
-
 let ulll = document.getElementById("ull");
 function prevClick() {
+  theImg.style.cssText =
+    "margin-right:5%;margin-left:5%;margin-top:0.5%;animation:imgLeft 5s infinite;";
+
   if (imgSrc === data["img1"]) {
     theImg.setAttribute("src", data["img4"]);
   } else if (imgSrc === data["img2"]) {
@@ -169,8 +171,9 @@ function prevClick() {
 }
 
 function nextClick() {
-    theImg.style.cssText ="margin-right:5%;margin-left:5%;margin-top:0.5%;animation:imgRight 7s ease-in-out infinite;";
-     if (imgSrc === data["img1"]) {
+  theImg.style.cssText =
+    "margin-right:5%;margin-left:5%;margin-top:0.5%;animation:imgRight 5s infinite;";
+  if (imgSrc === data["img1"]) {
     theImg.setAttribute("src", data["img2"]);
   } else if (imgSrc === data["img2"]) {
     theImg.setAttribute("src", data["img3"]);
@@ -189,8 +192,8 @@ next.addEventListener("click", nextClick);
 // auto slide
 let intervalId = setInterval(() => {
   nextClick();
-         theImg.style.animation = "imgRight 7s ease-in-out infinite";
-}, 7000);
+  theImg.style.animation = "imgRight 5s infinite";
+}, 5000);
 
 // remove auto slide on hover
 theImg.addEventListener("mouseover", () => {
@@ -200,11 +203,27 @@ theImg.addEventListener("mouseover", () => {
 
 // add auto slide on mouseout
 theImg.addEventListener("mouseout", () => {
-  theImg.style.animation = "identifier 7s ease-in-out infinite";
-  intervalId = setInterval(nextClick, 7000);
+  theImg.style.animation = isMovingLeft ? "identifierL 5s infinite" : "identifierR 5s infinite";
+  intervalId = setInterval(isMovingLeft ? prevClick : nextClick, 5000);
 });
 
+let isMovingLeft = false;
 
+prev.addEventListener("click", () => {
+  clearInterval(intervalId);
+  isMovingLeft = true; // Set direction to left
+  prevClick();
+  intervalId = setInterval(prevClick, 5000);
+  theImg.style.animation = "identifierL 5s infinite";
+});
+
+next.addEventListener("click", () => {
+  clearInterval(intervalId);
+  isMovingLeft = false; // Set direction to right
+  nextClick();
+  intervalId = setInterval(nextClick, 5000);
+  theImg.style.animation = "identifierR 5s infinite";
+});
 
 function liClick(e) {
   theImg.setAttribute("src", data[`img${e.target.value}`]);
