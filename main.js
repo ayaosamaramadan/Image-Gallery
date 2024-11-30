@@ -117,18 +117,6 @@ for (let i = 1; i <= 4; i++) {
 
 let theLiElements = document.querySelectorAll("#ull li");
 
-function setActiveLibyimg() {
-  theLiElements.forEach((li, index) => {
-    if (imgSrc === data[`img${index + 1}`]) {
-      li.style.cssText =
-        "background-color:#746d6d;color:#746d6d;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    } else {
-      li.style.cssText =
-        "background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
-    }
-  });
-}
-
 // prev btn
 let prev = document.createElement("span");
 prev.innerHTML = "&#8249;";
@@ -153,38 +141,57 @@ theDiv4.appendChild(next);
 let theImg = document.querySelector("#div4 img");
 theImg.style.cssText = "margin-right:5%;margin-left:5%;margin-top:0.5%;";
 
+function setActiveLibyimg() {
+  theLiElements.forEach((li, index) => {
+    if (imgSrc === data[`img${index + 1}`]) {
+      li.style.cssText =
+        "background-color:#746d6d;color:#746d6d;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
+    } else {
+      li.style.cssText =
+        "background-color:#d9d9d9;color:#d9d9d9;margin-right:10px;list-style-type:circle;border-radius:100px;list-style:none;cursor:pointer;";
+    }
+  });
+}
 let ulll = document.getElementById("ull");
+
 function prevClick() {
   theImg.style.cssText =
     "margin-right:5%;margin-left:5%;margin-top:0.5%;animation:imgLeft 5s infinite;";
+  setTimeout(() => {
+    if (imgSrc === data["img1"]) {
+      theImg.setAttribute("src", data["img4"]);
+    } else if (imgSrc === data["img2"]) {
+      theImg.setAttribute("src", data["img1"]);
+    } else if (imgSrc === data["img3"]) {
+      theImg.setAttribute("src", data["img2"]);
+    } else if (imgSrc === data["img4"]) {
+      theImg.setAttribute("src", data["img3"]);
+    }
+    imgSrc = theImg.getAttribute("src");
 
-  if (imgSrc === data["img1"]) {
-    theImg.setAttribute("src", data["img4"]);
-  } else if (imgSrc === data["img2"]) {
-    theImg.setAttribute("src", data["img1"]);
-  } else if (imgSrc === data["img3"]) {
-    theImg.setAttribute("src", data["img2"]);
-  } else if (imgSrc === data["img4"]) {
-    theImg.setAttribute("src", data["img3"]);
-  }
-  imgSrc = theImg.getAttribute("src");
-  setActiveLibyimg();
+    setActiveLibyimg();
+  }, 500);
+  clearInterval(intervalId);
 }
 
 function nextClick() {
   theImg.style.cssText =
     "margin-right:5%;margin-left:5%;margin-top:0.5%;animation:imgRight 5s infinite;";
-  if (imgSrc === data["img1"]) {
-    theImg.setAttribute("src", data["img2"]);
-  } else if (imgSrc === data["img2"]) {
-    theImg.setAttribute("src", data["img3"]);
-  } else if (imgSrc === data["img3"]) {
-    theImg.setAttribute("src", data["img4"]);
-  } else if (imgSrc === data["img4"]) {
-    theImg.setAttribute("src", data["img1"]);
-  }
-  imgSrc = theImg.getAttribute("src");
-  setActiveLibyimg();
+  setTimeout(() => {
+    if (imgSrc === data["img1"]) {
+      theImg.setAttribute("src", data["img2"]);
+    } else if (imgSrc === data["img2"]) {
+      theImg.setAttribute("src", data["img3"]);
+    } else if (imgSrc === data["img3"]) {
+      theImg.setAttribute("src", data["img4"]);
+    } else if (imgSrc === data["img4"]) {
+      theImg.setAttribute("src", data["img1"]);
+    }
+    imgSrc = theImg.getAttribute("src");
+
+    setActiveLibyimg();
+  }, 100);
+  clearInterval(intervalId);
 }
 
 prev.addEventListener("click", prevClick);
@@ -215,7 +222,6 @@ let isMovingLeft = false;
 prev.addEventListener("click", () => {
   clearInterval(intervalId);
   isMovingLeft = true; // Set direction to left
-  prevClick();
   intervalId = setInterval(prevClick, 5000);
   theImg.style.animation = "identifierL 5s infinite";
 });
@@ -223,12 +229,14 @@ prev.addEventListener("click", () => {
 next.addEventListener("click", () => {
   clearInterval(intervalId);
   isMovingLeft = false; // Set direction to right
-  nextClick();
+
   intervalId = setInterval(nextClick, 5000);
   theImg.style.animation = "identifierR 5s infinite";
 });
 
 function liClick(e) {
+  clearInterval(intervalId);
+  theImg.style.animation = "none";
   theImg.setAttribute("src", data[`img${e.target.value}`]);
   imgSrc = theImg.getAttribute("src");
   setActiveLibyimg();
