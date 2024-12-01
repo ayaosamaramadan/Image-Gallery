@@ -244,3 +244,27 @@ theLiElements.forEach((li) => {
 });
 
 setActiveLibyimg();
+
+let touchStart;
+
+theImg.addEventListener("touchstart", (e) => {
+  touchStart = e.touches[0].clientX;
+});
+
+theImg.addEventListener("touchend", (e) => {
+  let touchEnd = e.changedTouches[0].clientX;
+
+  clearInterval(intervalId);
+
+  if (touchStart - touchEnd > 50) {
+    clearInterval(intervalId);
+    isMovingLeft = true;
+    intervalId = setInterval(prevClick, 5000);
+    theImg.style.animation = "identifierL 5s infinite";
+  } else if (touchStart - touchEnd < -50) {
+    clearInterval(intervalId);
+    isMovingLeft = false;
+    intervalId = setInterval(nextClick, 5000);
+    theImg.style.animation = "identifierR 5s infinite";
+  }
+});
