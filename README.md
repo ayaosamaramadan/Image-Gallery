@@ -11,10 +11,6 @@
     <li><strong>Responsive Design</strong>: Fully responsive and works on all devices.</li>
     <li><strong>Smooth Transitions.</strong></li>
   </ul>
-<h2>🖥️ Large Device Screen Demo </h2>
-
-https://github.com/user-attachments/assets/753c085f-24f1-4902-bb1e-477dde9651e5
-
 <h2>💻 Medium Device Screen</h2>
 <p>
   This demonstrates how the landing page appears on medium devices such as
