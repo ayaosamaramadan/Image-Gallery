@@ -17,7 +17,6 @@ styleSheet.innerText = `
     background-color: #685e5e;
   }
 }
-
 `;
 document.head.appendChild(styleSheet);
 
@@ -170,8 +169,7 @@ function prevClick() {
     imgSrc = theImg.getAttribute("src");
 
     setActiveLibyimg();
-  }, 500);
-  clearInterval(intervalId);
+  }, 100);
 }
 
 function nextClick() {
@@ -191,7 +189,6 @@ function nextClick() {
 
     setActiveLibyimg();
   }, 100);
-  clearInterval(intervalId);
 }
 
 prev.addEventListener("click", prevClick);
